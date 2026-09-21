@@ -1,0 +1,22 @@
+{
+  "name": "Bazar TV",
+  "short_name": "BazarTV",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030303",
+  "theme_color": "#dc2626",
+  "icons": [
+    {
+      "src": "https://firebasestorage.googleapis.com/v0/b/bazar-tv.firebasestorage.app/o/App%20cover%2Fb1c987c4-370c-48ac-bee5-d43bc912b668.jpeg?alt=media&token=5867f8da-73c5-4ad9-8191-277b7c5ae0b7",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://firebasestorage.googleapis.com/v0/b/bazar-tv.firebasestorage.app/o/App%20cover%2Fb1c987c4-370c-48ac-bee5-d43bc912b668.jpeg?alt=media&token=5867f8da-73c5-4ad9-8191-277b7c5ae0b7",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+declare module '@noriginmedia/norigin-spatial-navigation';

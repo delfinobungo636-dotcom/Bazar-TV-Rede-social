@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "bazar-tv",
+    "firebase use prod": "bazar-tv"
+  },
+  "targets": {},
+  "etags": {}
+}

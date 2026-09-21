@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   ESTILOS GLOBAIS
+   ========================= */
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  /* Cor sólida para fundo - evita cálculos de transparência pesados */
+  background-color: #141414; 
+  color: rgba(255, 255, 255, 0.87);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  cursor: default !important;
+  overflow-x: hidden;
+}
+
+a, button, [role="button"] {
+  cursor: pointer !important;
+}
+
+/* Esconder a scrollbar em todos os navegadores, mas manter o scroll funcional */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE e Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Forçar o content container a não transbordar no eixo X */
+body {
+  overflow-x: hidden !important;
+}
+
+/* 3. A barrinha que se move - HORIZONTAL (A Ilusão dos 3 Traços) */
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: transparent; /* Esconde a barra gigante real */
+  background-image: repeating-linear-gradient(
+    90deg,
+    #ef4444 0px,
+    #ef4444 12px,   /* Comprimento de cada traço */
+    transparent 12px,
+    transparent 16px  /* Espaço vazio entre os traços */
+  );
+  /* 12px (traço) + 4px (espaço) x 3 = ~44px. Isto força o desenho a ser curto! */
+  background-size: 44px 100%; 
+  background-repeat: no-repeat;
+  background-position: right center; /* Cola os 3 traços no canto direito! */
+  border-radius: 10px;
+}
+
+/* Quando passas o rato por cima */
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background-image: repeating-linear-gradient(
+    90deg,
+    #ff2a2a 0px,
+    #ff2a2a 12px,
+    transparent 12px,
+    transparent 16px
+  );
+  background-size: 44px 100%;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+/* 4. A barrinha que se move - VERTICAL (Efeito de cima para baixo) */
+::-webkit-scrollbar-thumb:vertical {
+  background-color: transparent;
+  background-image: repeating-linear-gradient(
+    180deg,
+    #ef4444 0px,
+    #ef4444 15px,
+    transparent 15px,
+    transparent 22px
+  );
+  border-radius: 10px;
+}
+
+/* 5. Quando passas o rato por cima (fica com um vermelho mais vivo) */
+::-webkit-scrollbar-thumb:hover {
+  background-image: repeating-linear-gradient(
+    90deg,
+    #ff2a2a 0px,
+    #ff2a2a 15px,
+    transparent 15px,
+    transparent 22px
+  );
+}
+::-webkit-scrollbar-thumb:vertical:hover {
+  background-image: repeating-linear-gradient(
+    180deg,
+    #ff2a2a 0px,
+    #ff2a2a 15px,
+    transparent 15px,
+    transparent 22px
+  );
+}
+
+/* =========================
+   CARROSSEL COM BARRA INTELIGENTE (APARECE NO HOVER)
+   ========================= */
+
+   .carousel-scroll::-webkit-scrollbar {
+    height: 4px; /* Barra bem fininha */
+  }
+  
+  .carousel-scroll::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  
+  /* 1. Estado Normal: Totalmente Transparente (Invisível) */
+  .carousel-scroll::-webkit-scrollbar-thumb {
+    background-color: transparent; 
+    border-radius: 10px;
+  }
+  
+  /* 2. Estado Ativo: Aparece o Vermelho quando o rato entra na prateleira! */
+  .carousel-scroll:hover::-webkit-scrollbar-thumb {
+    background-color: #ef4444; 
+    /* Se achaste o vermelho muito forte, troca o #ef4444 por #3f3f46 (Cinzento escuro) */
+  }
+  /* =========================
+   BLINDAGEM SCROLLBAR E SMART TV
+   ========================= */
+
+/* Remove a barra nativa mas mantém o scroll funcional pelo comando/touch */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE e Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari e Opera */
+}
+
+/* Evita transbordos laterais da página que causam as barras fantasmas horizontais */
+body, html {
+  overflow-x: hidden !important;
+  overscroll-behavior-x: none;
+}
